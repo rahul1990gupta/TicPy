@@ -1,3 +1,6 @@
+"""
+This module is responsible for managing board's state and display 
+"""
 from ticpy.cell import Cell
 from ticpy.constants import SEED
 
@@ -5,6 +8,10 @@ from ticpy.constants import SEED
 class Board(object):
 
     def __init__(self, rows, cols):
+        """
+        :param rows:(int)  
+        :param cols:(int) 
+        """
         self.ROWS = rows
         self.COLS = cols
         self.cells = [[Cell(i, j)
@@ -14,11 +21,19 @@ class Board(object):
         self.current_col = None
 
     def clear(self):
+        """
+        Resets teh state of the board
+        :return: 
+        """
         for i in range(self.ROWS):
             for j in range(self.COLS):
                 self.cells[i][j].clear()
 
     def is_draw(self):
+        """
+        Returns true if board is in draw state after the recent move
+        :return: 
+        """
         for i in range(self.ROWS):
             for j in range(self.COLS):
                 if self.cells[i][j].content == SEED.EMPTY:
@@ -26,6 +41,11 @@ class Board(object):
         return True
 
     def has_won(self, seed):
+        """
+        Return True if the recent move by player has resulted in his win
+        :param seed: 
+        :return: 
+        """
         three_in_row = self.cells[self.current_row][0].content == seed \
                        and self.cells[self.current_row][1].content == seed \
                        and self.cells[self.current_row][2].content == seed
@@ -47,6 +67,11 @@ class Board(object):
         return three_in_row or three_in_column or three_in_diagonal or three_in_opposite_diagonal
 
     def __str__(self):
+        """
+        String representation of the board. It is used to convey the board's state to 
+         End user
+        :return: 
+        """
         row_repr = '|{}|'
         list_of_letters = map(str, map(chr, range(97, 97+self.COLS, 1)))
         final_str = ' ' + row_repr.format('|'.join(list_of_letters)) + '\n'
