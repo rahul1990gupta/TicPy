@@ -1,6 +1,9 @@
 # TicPy
 ![](https://travis-ci.org/rahul1990gupta/TicPy.svg?branch=master)
 [![codecov](https://codecov.io/gh/rahul1990gupta/TicPy/branch/master/graph/badge.svg)](https://codecov.io/gh/rahul1990gupta/TicPy)
+![Python27](https://img.shields.io/badge/python-2.7-blue.svg)
+![Python35](https://img.shields.io/badge/python-3.5-blue.svg)
+![](https://badge.fury.io/py/ticpy.svg)
 
 ## Installation
 To install simply type this in your console 
