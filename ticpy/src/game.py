@@ -7,10 +7,9 @@ from ticpy.src.constants import GAME_STATE, SEED, get_player_name
 from random import choice
 from itertools import product
 
-try:
-    input = raw_input
-except NameError:
-    pass
+import sys
+if sys.version[0]=="3":
+    raw_input=input
 
 
 class Game(object):
@@ -64,7 +63,7 @@ class Game(object):
         valid_input = False
         player_name = get_player_name(seed)
         while not valid_input:
-            user_choice = input(player_name + ", which square? (e.g. 2B, 2b, B2 or b2) ")
+            user_choice = raw_input(player_name + ", which square? (e.g. 2B, 2b, B2 or b2) ")
 
             if Game.is_valid(user_choice) and self.is_available(user_choice):
                 row, col = Game.get_row_col(user_choice)
