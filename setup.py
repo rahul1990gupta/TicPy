@@ -10,7 +10,7 @@ requires = ['bunch==1.0.1',
             ]
 
 setup(name='ticpy',
-      version='0.1',
+      version='0.2',
       description='ticpy',
       classifiers=[
           "Programming Language :: Python",
