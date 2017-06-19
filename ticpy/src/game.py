@@ -9,7 +9,9 @@ from itertools import product
 
 import sys
 if sys.version[0]=="3":
-    raw_input=input
+    inp = input
+else:
+    inp = raw_input
 
 
 class Game(object):
@@ -63,7 +65,7 @@ class Game(object):
         valid_input = False
         player_name = get_player_name(seed)
         while not valid_input:
-            user_choice = raw_input(player_name + ", which square? (e.g. 2B, 2b, B2 or b2) ")
+            user_choice = inp(player_name + ", which square? (e.g. 2B, 2b, B2 or b2) ")
 
             if Game.is_valid(user_choice) and self.is_available(user_choice):
                 row, col = Game.get_row_col(user_choice)
