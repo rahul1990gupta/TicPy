@@ -1,5 +1,5 @@
-from cell import Cell
-from constants import SEED
+from ticpy.cell import Cell
+from ticpy.constants import SEED
 
 
 class Board(object):

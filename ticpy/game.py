@@ -1,26 +1,13 @@
 from __future__ import print_function
-from board import Board
-from constants import GAME_STATE, SEED, get_player_name
+from ticpy.board import Board
+from ticpy.constants import GAME_STATE, SEED, get_player_name
 from random import choice
-from string import lower
 from itertools import product
 
 try:
     input = raw_input
 except NameError:
     pass
-
-
-def is_valid(user_choice):
-    normalized_choice = ''.join(sorted(lower(user_choice)))
-    list_of_valid_choices = map(lambda x: str(x[0]) + str(x[1]), list(product([1, 2, 3], ['a', 'b', 'c'])))
-
-    return normalized_choice in list_of_valid_choices
-
-
-def get_row_col(user_choice):
-    normalized_choice = ''.join(sorted(lower(user_choice)))
-    return int(normalized_choice[0])-1, ord(normalized_choice[1])-ord('a')
 
 
 class Game(object):
@@ -58,7 +45,7 @@ class Game(object):
             user_choice = input(player_name + ", which square? (e.g. 2B, 2b, B2 or b2) ")
 
             if Game.is_valid(user_choice) and self.is_available(user_choice):
-                row, col = get_row_col(user_choice)
+                row, col = Game.get_row_col(user_choice)
                 self._board.cells[row][col].content = seed
                 self._board.current_row = row
                 self._board.current_col = col
@@ -74,7 +61,7 @@ class Game(object):
 
     @staticmethod
     def is_valid(user_choice):
-        normalized_choice = ''.join(sorted(lower(user_choice)))
+        normalized_choice = ''.join(sorted(user_choice.lower()))
         list_of_valid_choices = map(lambda x: str(x[0]) + str(x[1]), list(product([1, 2, 3], ['a', 'b', 'c'])))
 
         return normalized_choice in list_of_valid_choices
@@ -85,7 +72,7 @@ class Game(object):
 
     @staticmethod
     def get_row_col(user_choice):
-        normalized_choice = ''.join(sorted(lower(user_choice)))
+        normalized_choice = ''.join(sorted(user_choice.lower()))
         return int(normalized_choice[0])-1, ord(normalized_choice[1])-ord('a')
 
 

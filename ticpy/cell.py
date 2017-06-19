@@ -1,4 +1,4 @@
-from constants import SEED, SEED_REPR
+from ticpy.constants import SEED, SEED_REPR
 
 
 class Cell(object):
