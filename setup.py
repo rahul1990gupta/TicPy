@@ -1,6 +1,6 @@
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 requires = ['bunch==1.0.1',
             'pytest-cov==2.5.1',
@@ -9,8 +9,9 @@ requires = ['bunch==1.0.1',
             'pytest==3.1.2'
             ]
 
+
 setup(name='ticpy',
-      version='0.2',
+      version='0.3.1',
       description='ticpy',
       classifiers=[
           "Programming Language :: Python",
@@ -21,7 +22,7 @@ setup(name='ticpy',
       author_email='rahul1990gupta@gmail.com',
       url='https://github.com/rahul1990gupta/TicPy',
       keywords='tic tac toe in python',
-      packages=['ticpy'],
+      packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
       install_requires=requires,
