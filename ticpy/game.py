@@ -89,8 +89,11 @@ class Game(object):
         return int(normalized_choice[0])-1, ord(normalized_choice[1])-ord('a')
 
 
-if __name__ == '__main__':
+def main():
     # TODO: Take command line parameters for game's board size
     game = Game(3, 3)
     game.play()
 
+
+if __name__ == '__main__':
+    main()

@@ -21,7 +21,7 @@ class Board(object):
     def is_draw(self):
         for i in range(self.ROWS):
             for j in range(self.COLS):
-                if self.cells[i][j].content ==  SEED.EMPTY:
+                if self.cells[i][j].content == SEED.EMPTY:
                     return False
         return True
 

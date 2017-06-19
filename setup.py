@@ -21,8 +21,13 @@ setup(name='ticpy',
       author_email='',
       url='',
       keywords='tic tac toe in python',
-      packages=find_packages(),
+      packages=['ticpy'],
       include_package_data=True,
       zip_safe=False,
-      install_requires=requires
+      install_requires=requires,
+      entry_points=dict(
+          console_scripts=[
+              'ticpy = ticpy.game:main',
+          ]
+      )
 )
