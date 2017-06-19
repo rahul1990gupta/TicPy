@@ -2,7 +2,10 @@ import os
 
 from setuptools import setup
 
-requires = ['bunch==1.0.1']
+requires = ['bunch==1.0.1',
+            'pytest-cov==2.5.1',
+            'pytest==3.1.2'
+            ]
 
 setup(name='ticpy',
       version='0.1',
@@ -22,7 +25,7 @@ setup(name='ticpy',
       install_requires=requires,
       entry_points=dict(
           console_scripts=[
-              'ticpy = ticpy.game:main',
+              'ticpy = ticpy.src.game:main',
           ]
       )
 )

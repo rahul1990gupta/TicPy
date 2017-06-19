@@ -2,8 +2,8 @@
 This module is responsible for Game object and state as player play their turn 
 """
 from __future__ import print_function
-from ticpy.board import Board
-from ticpy.constants import GAME_STATE, SEED, get_player_name
+from ticpy.src.board import Board
+from ticpy.src.constants import GAME_STATE, SEED, get_player_name
 from random import choice
 from itertools import product
 

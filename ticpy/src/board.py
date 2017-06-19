@@ -1,8 +1,8 @@
 """
 This module is responsible for managing board's state and display 
 """
-from ticpy.cell import Cell
-from ticpy.constants import SEED
+from ticpy.src.cell import Cell
+from ticpy.src.constants import SEED
 
 
 class Board(object):
@@ -22,7 +22,7 @@ class Board(object):
 
     def clear(self):
         """
-        Resets teh state of the board
+        Resets the state of the board
         :return: 
         """
         for i in range(self.ROWS):
