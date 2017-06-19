@@ -1,3 +1,6 @@
+"""
+This module stores all the constants used in the Game libraries
+"""
 from bunch import Bunch
 
 GAME_STATE = Bunch({'PLAYING': 0,
