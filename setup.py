@@ -4,7 +4,7 @@ from setuptools import setup
 
 requires = ['bunch==1.0.1',
             'pytest-cov==2.5.1',
-            'pytest-mock-1.6.0',
+            'pytest-mock==1.6.0',
             'pytest==3.1.2'
             ]
 
